@@ -7,6 +7,8 @@ import { HeaderComponent } from './layout-components/header/header.component';
 import { FooterComponent } from './layout-components/footer/footer.component';
 import { LayoutContainerComponent } from './layout-components/layout-container/layout-container.component';
 
+import { CarouselModule } from 'primeng/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { LayoutContainerComponent } from './layout-components/layout-container/l
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
