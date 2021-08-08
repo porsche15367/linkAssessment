@@ -1,0 +1,107 @@
+@import '../../../styles/colors';
+.navbar {
+    background-color: $darkBlue;
+    padding: 12px 0px;
+
+    &-icon-container {
+        padding: 8px 12px 3px 13px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 1s;
+
+        &:hover {
+            background-color: $lightBlue;
+            .navbar-bell-new-notification-icon {
+                background: $white;
+            }
+        }
+    }
+    &-search-bar{
+        background-color: $darkGrey;
+        &:hover {
+            background-color: $darkGrey;
+        }
+    }
+    &-notifications-popup {
+        width: 364px;
+        height: auto;
+        background: $white;
+        border: 1px solid #AFAFAF;
+        border-radius: 5px;
+        position: absolute;
+        right: 8px;
+        z-index: 3;
+
+        &-header {
+            padding: 15px 16px;
+        }
+
+        &-item {
+            border-bottom: 1px solid $lightGrey ;
+            padding:0px 15px 10px 15px;
+        }
+        &-footer {
+            padding: 0px 15px 13px 15px;
+           justify-content: center;
+           align-items: center;
+           display: flex;
+        }
+      a {
+          color: $lightBlue;
+          text-decoration: none;
+      }
+    }
+    &-settings-popup{
+        width: 232px;
+        height: auto;
+        background: $white;
+        border: 1px solid #AFAFAF;
+        border-radius: 5px;
+        position: absolute;
+        right: 8px;
+        z-index: 3;
+
+        &-header {
+            padding: 15px 16px 3px 16px;
+        }
+
+        &-item {
+            border-bottom: 1px solid $lightGrey ;
+            padding:0px 15px 10px 15px;
+        }
+        &-footer {
+            padding: 0px 15px 13px 15px;
+           justify-content: center;
+           align-items: center;
+           display: flex;
+        }
+    }
+    &-bell-new-notification-icon {
+        height: 13px;
+        width: 13px;
+        background: #8DC043;
+        position: absolute;
+        border-radius: 20px;
+        top: 5px;
+        right: 9px;
+        transition: 1s;
+    }
+    input {
+        background: none;
+        border: none;
+        outline: none;
+        min-width: 240px
+     
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1; /* Firefox */
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+      }
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+      }
+    
+}

@@ -1,0 +1,37 @@
+@import '../../../styles/colors';
+.footer {
+    &-links{
+        background: $lightGrey;
+        height: 220px;
+        padding: 52px 0px;
+        display: flex;
+        &-input-container {
+            background: $white;
+            width: 220px;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+        }
+        &-subscribe-button{
+            border: none;
+            background: $lightBlue;
+            color: $white;
+            border-radius: 0 5px 5px 0;
+
+        }
+        input {
+            background: none;
+            border: none;
+            outline: none;
+            min-width: 240px
+         
+        }
+    }
+    &-copy-rights {
+        background: $darkBlue;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+}

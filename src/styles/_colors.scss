@@ -1,0 +1,51 @@
+
+/*colors variables*/
+$darkBlue : #0F3294;
+$lightBlue: #13BEFF;
+
+$darkGrey:#707070;
+$lightGrey: #74747433;
+
+$lightGreen: #8DC043;
+
+$black:#000000;
+$lightBlack:#565960;
+
+$white: #FFFFFF;
+
+/*colors classes*/
+
+.color {
+    &-dark-blue {
+        color: $darkBlue;
+    }
+    &-light-blue {
+        color:$lightBlue
+    }
+    &-dark-grey {
+        color: $darkGrey;
+    }
+    &-light-grey {
+        color: $lightGrey;
+    }
+    &-light-green {
+        color: $lightGreen;
+    }
+    &-black {
+        color: $black;
+    }
+    &-light-black {
+        color: $lightBlack;
+    }
+    &-white{
+        color: $white;
+    }
+}
+
+
+
+
+
+
+
+

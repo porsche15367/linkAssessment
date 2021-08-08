@@ -1,0 +1,105 @@
+<div class="navbar">
+    <div class="container justify-content-between">
+        <div>
+            <i class="pi pi-align-left heading-20 color-white me-4"></i>
+            <img src="../../../assets/imgs/link-logo.png" alt="" class="d-none d-md-inline-flex ">
+        </div>
+        <div class="d-md-none ">
+            <img src="../../../assets/imgs/link-logo.png" alt="" class="me-1">
+        </div>
+        <div class="d-none d-md-flex align-content-center pt-1 ">
+            <div class="navbar-icon-container me-4" [ngClass]="{'navbar-search-bar' : searchBar}">
+                <input type="text" placeholder="Search" class="me-2 color-white" *ngIf="searchBar">
+                <i class="pi pi-search heading-18 color-white" (click)="toggleSearchBar()"></i>
+            </div>
+            <div class="navbar-icon-container me-4 position-relative ">
+                <i class="navbar-bell-new-notification-icon"></i>
+                <i class="pi pi-bell heading-18 color-white" (click)="toggleNotifications()"></i>
+                <div class="navbar-notifications-popup" *ngIf="showNotifications">
+                    <div class="color-dark-grey heading-14 navbar-notifications-popup-header">
+                        Recent Notifications
+                    </div>
+                    <div class="mt-2 color-black navbar-notifications-popup-item">
+                        You have an upcoming appointment today!
+                        <a href="">Check-in Now</a>
+                    </div>
+                    <div class="mt-2 color-black navbar-notifications-popup-item">
+                        Rate your last service appointment
+                    </div>
+                    <div class="mt-2 color-black navbar-notifications-popup-item">
+                        Your payment request has been approved
+                    </div>
+                    <div class="mt-2 color-black navbar-notifications-popup-footer align-content-center d-flex">
+                        <a class="d-flex">All Notifications <i class="material-icons-outlined ms-2">
+                                trending_flat
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-content-center me-4 mt-2 ">
+                <img src="../../../assets/imgs/person.jpg" class="rounded-circle me-2" alt="" height="25" width="25">
+                <div class="color-white heading-14">
+                    User Name
+                </div>
+            </div>
+            <div class="navbar-icon-container">
+                <i class="material-icons-outlined color-white" (click)="toggleSettings()">
+                    settings
+                </i>
+                <div class="navbar-settings-popup" *ngIf="showSettings">
+                    <div class="color-dark-grey heading-14 navbar-settings-popup-header">
+                        Languages
+                    </div>
+                    <div class="mt-2 color-black navbar-settings-popup-item">
+                        <div class="d-flex justify-content-between" (click)="languageSelector('english')">
+                            <div>
+                                English
+                            </div>
+                            <div>
+                                <i class="pi pi-check color-light-blue" *ngIf="language == 'english'"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2" (click)="languageSelector('arabic')">
+                            <div>
+                                اللغة العربية
+                            </div>
+                            <div>
+                                <i class="pi pi-check color-light-blue" *ngIf="language == 'arabic'"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="color-dark-grey heading-14 navbar-settings-popup-header">
+                        Font Size
+                    </div>
+                    <div
+                        class="mt-2 color-black navbar-settings-popup-item d-flex justify-content-start align-items-baseline">
+                        <div class="heading-24 font-sans-bold me-2" [ngClass]="{'color-light-blue' : fontSize == 24}"
+                            (click)="fontSizeSelector(24)">
+                            A
+                        </div>
+                        <div class="heading-20 font-sans-bold me-2" [ngClass]="{'color-light-blue' : fontSize == 20}"
+                            (click)="fontSizeSelector(20)">
+                            A
+                        </div>
+                        <div class="heading-16 font-sans-bold" [ngClass]="{'color-light-blue' : fontSize == 16}"
+                            (click)="fontSizeSelector(16)">
+                            A
+                        </div>
+                    </div>
+                    <div class="color-dark-grey heading-14 navbar-settings-popup-header">
+                        Account
+                    </div>
+                    <div class="mt-2 color-black navbar-settings-popup-item ">
+                        Sign out
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="transparent-backdrop" *ngIf="showBackDrop" (click)="hidePopups()">
+
+</div>

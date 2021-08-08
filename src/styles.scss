@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/fonts';
+@import 'styles/colors';
+@import 'styles/headings';
+
+
+
+/*body*/
+body {
+    font-family: $opensans-regular;
+    color: $black;
+}
+
+/*bootstrap classes modifications*/
+.container-fluid {
+    padding: 0;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/*common*/
+.transparent-backdrop {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+}
+

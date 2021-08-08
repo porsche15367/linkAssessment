@@ -1,0 +1,30 @@
+/* fonts */
+$opensans-regular: "opensans-regular";
+$opensans-bold: "opensans-bold";
+$opensans-semibold: "opensans-semibold";
+
+/* fonts */
+@font-face {
+    font-family: "opensans-regular";
+    src: url(../assets/fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: "opensans-bold";
+    src: url(../assets/fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+    font-family: "opensans-semibold";
+    src: url(../assets/fonts/OpenSans-SemiBold.ttf);
+}
+
+.font-sans {
+    &-regular {
+        font-family: $opensans-regular;
+    }
+    &-bold {
+        font-family: $opensans-bold;
+    }
+    &-semi-bold {
+        font-family: $opensans-semibold;
+    }
+}
