@@ -1,0 +1,7 @@
+<div *ngIf="news$ | async as news">
+    <div *ngFor="let new of news.articles">
+        <div>
+            {{new.publishedAt | date:"EEEE, d, MMMM , y"}}
+        </div>
+    </div>
+</div>

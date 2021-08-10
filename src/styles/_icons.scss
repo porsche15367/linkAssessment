@@ -1,0 +1,26 @@
+.icon {
+    transition: 0.2s;
+    &-share {
+        position: relative;
+        display: inline-block;
+        &::after{
+            content: "share";
+        }
+    }
+    &-favorite {
+        position: relative;
+        display: inline-block;
+        &::after{
+            content: "favorite";
+        }
+    }
+    &-favorite-border {
+        position: relative;
+        display: inline-block;
+        &::after{
+            content: "favorite_border";
+        }
+    }
+    
+  
+}

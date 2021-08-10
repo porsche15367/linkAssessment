@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="heading-50 font-sans-semibold">
+            Latest News
+        </div>
+        <div class="color-light-blue heading-20 cursor-pointer d-flex" [routerLink]="['/news']">
+            <div>
+                View All
+            </div>
+            <i class="material-icons-outlined ms-2 mt-1">trending_flat</i>
+        </div>
+    </div>
+    <div class="cards-container " *ngIf="news$ | async as news">
+        <div class="news-card" [ngClass]="{'d-none': !news.showOnHomepage}" *ngFor="let news of news.articles">
+            <img [src]="news.urlToImage" alt="Image" class="news-card-img">
+            <div class="news-card-body">
+                <div class="news-card-body-like-share">
+                    <i class="icon  material-icons color-light-blue cursor-pointer" (click)="addTolikes(news.id)"
+                        [ngClass]="likedNews.includes(news.id) ? 'icon-favorite' : 'icon-favorite-border'"></i>
+                    <i class="icon icon-share material-icons color-light-blue ms-3 cursor-pointer"
+                        (click)="menu.toggle($event)" [ngClass]="{'heading-16': shareSocial == news.id}"
+                        [ngStyle]="{width:'27px'}"></i>
+                </div>
+                <div class="news-card-body-title">
+                    {{news.title | slice:0:50}} <span *ngIf="news.title.length > 50">...</span>
+                </div>
+                <div class="news-card-body-source-category" *ngIf="sourceCategories$ | async as categories">
+                    <div *ngFor="let category of categories.sourceCategory">
+                        <div class="news-card-body-source-category-chip" *ngIf="category.id == news.sourceID">
+                            {{category.name}}
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card-body-description">
+                    {{news.description | slice:0:140}} <span *ngIf="news.description.length > 140">...</span>
+                </div>
+                <div class="news-card-body-date">
+                    <i class="material-icons-outlined color-light-blue me-2">
+                        date_range
+                    </i>
+                    {{news.publishedAt | date:"EEEE, d, MMMM , y"}}
+                </div>
+            </div>
+            <p-menu #menu [popup]="true" [model]="items" (onShow)="shareSocialIcon(news.id)"
+                (onHide)="resetShareSocialIcon()"></p-menu>
+        </div>
+    </div>
+</div>

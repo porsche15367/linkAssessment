@@ -36,3 +36,11 @@
     }
    
 }
+
+@media only screen and (max-width: 600px) {
+    .footer{
+        &-links {
+            height: auto;
+        }
+    }
+  }

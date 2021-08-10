@@ -10,6 +10,7 @@ $heading-24: 24px;
 $heading-26: 26px;
 $heading-28: 28px;
 $heading-30: 30px;
+$heading-50: 50px;
 
 
 /*heading classes*/
@@ -46,5 +47,8 @@ $heading-30: 30px;
     }
     &-30{
         font-size: $heading-30;
+    }
+    &-50 {
+        font-size: $heading-50;
     }
 }

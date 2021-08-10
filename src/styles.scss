@@ -1,6 +1,8 @@
 @import 'styles/fonts';
 @import 'styles/colors';
 @import 'styles/headings';
+@import 'styles/cards';
+@import 'styles/icons';
 
 
 
@@ -30,4 +32,98 @@ body {
     bottom: 0px;
     z-index: 2;
 }
+
+
+/*carousel*/
+.carousel {
+    &-cells {
+        .carousel-cell {
+            img {
+               object-fit: cover !important;
+            }
+        }
+    }
+    &-arrow {
+        background-color: #ffffffc9 !important
+    }
+    &-arrow-next {
+        right: 125px !important;
+        border-radius: 0 !important;
+    }
+    &-arrow-prev {
+        left: 125px !important;
+        border-radius: 0 !important;
+    }
+
+    &-dots {
+        bottom: 50px !important;
+        .carousel-dot {
+            border: none !important;
+            width: 14px !important;
+            height: 14px !important;
+            background: #ffffff61 !important;
+            &-active {
+                background: $white !important;
+                width: 16px !important;
+                height: 16px !important;
+            }
+        }
+    }
+    
+}
+
+/*p-menu*/
+.p-menu {
+    width: auto !important;
+    padding: 0 !important;
+}
+.p-menu ul {
+    display: flex;
+    position: absolute;
+    right: -17px;
+    
+    li {
+        &:first-child {
+            background: #3B5998;
+            
+        }
+        &:nth-child(2) {
+            background: $lightBlue;
+        }
+        &:nth-child(3) {
+            background: #FF6666;
+        }
+    }
+}
+.p-menu .p-menuitem-link:not(.p-disabled):hover {
+    background: unset !important;
+}
+.p-menu .p-menuitem-link .p-menuitem-icon {
+    margin: 0 !important;
+    color: white;
+    &:hover {
+        color: white !important;
+    }
+}
+.p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
+    color: white !important;
+}
+
+
+/*mobile veiw carousel*/
+
+@media only screen and (max-width: 600px) { 
+    .carousel {
+        &-arrow-next {
+            right: 5px !important;
+        }
+        &-arrow-prev {
+            left: 5px !important;
+        }
+        &-dots {
+            bottom: 5px !important;
+        }
+    }
+}
+
 
