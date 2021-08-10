@@ -26,6 +26,7 @@
         &-title {
             font-family: $opensans-semibold;
             font-size: 20px;
+            cursor: pointer;
         }
         &-source-category {
             margin: 10px 0px;
@@ -49,4 +50,15 @@
         }
     }
     
+}
+
+@media  only screen and (max-width: 768px) {
+    .news-card {
+        width: 100%;
+    }
+}
+@media  only screen and (max-width: 1024px) {
+    .news-card {
+        width: 47%;
+    }
 }

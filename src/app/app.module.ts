@@ -14,7 +14,7 @@ import { HowWeHaveHelpedComponent } from './home/how-we-have-helped/how-we-have-
 import { HomeContainerComponent } from './home/home-container/home-container.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import { MenuModule } from 'primeng/menu';
+import { MenuModule } from 'primeng/menu'
 
 @NgModule({
   declarations: [
@@ -33,8 +33,7 @@ import { MenuModule } from 'primeng/menu';
     IvyCarouselModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MenuModule
-
+    MenuModule,
 
   ],
   providers: [],

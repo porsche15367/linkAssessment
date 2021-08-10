@@ -109,6 +109,18 @@ body {
     color: white !important;
 }
 
+/*p-breadcrumb*/
+.p-breadcrumb {
+    padding: 1rem 0rem;
+    border: none;
+    background: transparent;
+}
+.p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+    color: $darkBlue;
+}
+.p-breadcrumb ul li:last-child .p-menuitem-link .p-menuitem-text {
+    color:#AFAFAF;
+}
 
 /*mobile veiw carousel*/
 

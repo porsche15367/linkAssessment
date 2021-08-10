@@ -21,7 +21,7 @@
                         (click)="menu.toggle($event)" [ngClass]="{'heading-16': shareSocial == news.id}"
                         [ngStyle]="{width:'27px'}"></i>
                 </div>
-                <div class="news-card-body-title">
+                <div class="news-card-body-title" [routerLink]="['/news', news.id]">
                     {{news.title | slice:0:50}} <span *ngIf="news.title.length > 50">...</span>
                 </div>
                 <div class="news-card-body-source-category" *ngIf="sourceCategories$ | async as categories">

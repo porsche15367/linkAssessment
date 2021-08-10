@@ -72,3 +72,20 @@
         }
     }
 }
+
+@media  only screen and (max-width: 768px) {
+    .how-we-helped {
+        height: 1450px;
+        &-diamond-second-row {
+            margin-top: unset;
+        }
+    }
+}
+@media  only screen and (max-width: 1024px) {
+    .how-we-helped {
+        height: 1153px;
+        &-diamond-second-row {
+            margin-top: unset;
+        }
+    }
+}

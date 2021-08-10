@@ -1,0 +1,12 @@
+.news-details {
+    background: #EFEFEF;
+    padding-bottom: 50px;
+    .news-card {
+        width: 100%;
+        &-body-description {
+            height: auto;
+            min-height: 150px;
+        }
+    }
+  
+}
