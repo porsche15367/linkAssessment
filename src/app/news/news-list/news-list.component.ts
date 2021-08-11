@@ -19,6 +19,9 @@ export class NewsListComponent implements OnInit {
   socialItems: MenuItem[];
   likedNews = []
   shareSocial: number;
+  from: Date;
+  to: Date;
+  selectedSourceCategory;
 
   constructor(private NewsService: NewsService, private LikedNewsService: LikedNewsService, private SourceCategoryService: SourceCategoryService) { }
 

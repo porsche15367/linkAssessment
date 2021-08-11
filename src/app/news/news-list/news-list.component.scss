@@ -1,7 +1,37 @@
+@import '../../../styles/colors';
 .news-list {
     background: #EFEFEF;
     padding-bottom: 50px;
     .news-card {
         margin: 10px 10px 10px 0;
+        width: 32.3%;
+    }
+    &-filters-container {
+    
+        &-input-container {
+            background: $white;
+            height: 44px;
+            width: 320px;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            display: flex;
+        }
+        &-search-button{
+            padding: 11px 20px;
+            height: 44px;
+            border: none;
+            background: $lightBlue;
+            color: $white;
+            border-radius: 0 5px 5px 0;
+    
+        }
+         
+ 
+    }
+    input {
+        background: none;
+        border: none;
+        outline: none;
+        width: 567px;
     }
 }
