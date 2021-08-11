@@ -1,8 +1,12 @@
 <div class="navbar">
     <div class="container justify-content-between">
         <div>
-            <i class="pi pi-align-left heading-20 color-white me-4"></i>
-            <img src="../../../assets/imgs/link-logo.png" alt="" class="d-none d-md-inline-flex ">
+            <i *ngIf="!sideMenuShow" class="pi pi-align-left heading-20 color-white me-4 cursor-pointer"
+                (click)="toggleSideMenu('left')"></i>
+            <i *ngIf="sideMenuShow" class="pi pi-times heading-20 color-white me-4 cursor-pointer"
+                (click)="toggleSideMenu('left')"></i>
+            <img src="../../../assets/imgs/link-logo.png" alt="" class="d-none d-md-inline-flex cursor-pointer "
+                routerLink="/home">
         </div>
         <div class="d-md-none ">
             <img src="../../../assets/imgs/link-logo.png" alt="" class="me-1">
@@ -103,3 +107,40 @@
 <div class="transparent-backdrop" *ngIf="showBackDrop" (click)="hidePopups()">
 
 </div>
+
+<p-dialog header="Godfather I" [(visible)]="sideMenuShow" [position]="position" [style]="{width: '35vw', height:'90vh'}"
+    [draggable]="false" [blockScroll]="true">
+    <div class="d-flex navbar-side-menu">
+        <div>
+            <img src="../../../assets/imgs/instagram-white.svg" height="23" class="d-block "
+                [style]="{marginTop: '65vh'}" alt="">
+            <img src="../../../assets/imgs/youtube-white.svg" height="23" class="d-block mt-4" alt="">
+            <img src="../../../assets/imgs/linkedin-white.svg" height="23" class="d-block mt-4" alt="">
+        </div>
+        <div>
+            <ul>
+                <li>Home</li>
+                <li>About us
+                    <div>who are us</div>
+                    <div>Why us?</div>
+                </li>
+                <li>News
+                    <div>News</div>
+                    <div>Events</div>
+                </li>
+                <li>Careers
+                    <div>
+                        Opportunities
+                    </div>
+                </li>
+                <li>
+                    Contact Us
+                </li>
+                <li>
+                    Site Map
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</p-dialog>

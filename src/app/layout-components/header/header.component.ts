@@ -12,6 +12,8 @@ export class HeaderComponent implements OnInit {
   showBackDrop: boolean;
   language: string = 'english';
   fontSize: number = 20;
+  sideMenuShow: boolean;
+  position: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -32,6 +34,10 @@ export class HeaderComponent implements OnInit {
     this.showNotifications = false;
     this.showSettings = false;
     this.showBackDrop = false
+  }
+  toggleSideMenu(position) {
+    this.sideMenuShow = !this.sideMenuShow
+    this.position = position
   }
 
   languageSelector(language: string) {

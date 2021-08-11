@@ -1,11 +1,11 @@
+import { Article } from './../../models/article.model';
 import { SourceCategory } from './../../models/sourceCategory.model';
 import { SourceCategoryService } from './../../services/source-category.service';
 import { LikedNewsService } from './../../services/liked-news.service';
 import { NewsService } from './../../services/news.service';
-import { Article } from '../../models/article.model';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+
 
 @Component({
   selector: 'app-news-list',
@@ -13,8 +13,8 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./news-list.component.scss']
 })
 export class NewsListComponent implements OnInit {
-  news$: Observable<Article[]>
-  sourceCategories$: Observable<SourceCategory[]>
+  newss: Article[]
+  categories: SourceCategory[]
   items: MenuItem[];
   socialItems: MenuItem[];
   likedNews = []
@@ -22,12 +22,22 @@ export class NewsListComponent implements OnInit {
   from: Date;
   to: Date;
   selectedSourceCategory;
+  searchText;
 
   constructor(private NewsService: NewsService, private LikedNewsService: LikedNewsService, private SourceCategoryService: SourceCategoryService) { }
 
   ngOnInit(): void {
-    this.news$ = this.NewsService.getAllNews()
-    this.sourceCategories$ = this.SourceCategoryService.getSourceCategories()
+    this.NewsService.getAllNews().subscribe(
+      res => {
+        this.newss = JSON.parse(JSON.stringify(res)).articles
+      }
+    )
+    this.SourceCategoryService.getSourceCategories().subscribe(
+      res => {
+        this.categories = JSON.parse(JSON.stringify(res)).sourceCategory
+      }
+    )
+
     this.items = [
       { label: 'Home', routerLink: '/' },
       { label: 'News' },
@@ -39,6 +49,15 @@ export class NewsListComponent implements OnInit {
       { label: '', icon: 'pi pi-fw pi-envelope' }
     ];
   }
+
+  initializeNewsService() {
+    this.NewsService.getAllNews().subscribe(
+      res => {
+        this.newss = JSON.parse(JSON.stringify(res)).articles
+      }
+    )
+  }
+
   addTolikes(id: number) {
     this.LikedNewsService.addToLikes(id)
     this.likedNews = this.LikedNewsService.likedNews
@@ -52,4 +71,20 @@ export class NewsListComponent implements OnInit {
     this.shareSocial = 0
   }
 
+  onSearchText() {
+    this.newss = this.newss.filter(news => {
+      return news.title.toLowerCase().match(this.searchText)
+    }
+    )
+  }
+  onFilterByCategory() {
+    this.newss = this.newss.filter(news => news.sourceID == this.selectedSourceCategory)
+  }
+
+  onDateFilter() {
+
+    this.newss = this.newss.filter((news) =>
+      news.publishedAt >= this.from && news.publishedAt <= this.to
+    );
+  }
 }

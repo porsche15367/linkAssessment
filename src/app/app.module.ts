@@ -15,7 +15,8 @@ import { HomeContainerComponent } from './home/home-container/home-container.com
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MenuModule } from 'primeng/menu'
-
+import { FormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,8 @@ import { MenuModule } from 'primeng/menu'
     HttpClientModule,
     BrowserAnimationsModule,
     MenuModule,
+    FormsModule,
+    DialogModule
 
   ],
   providers: [],

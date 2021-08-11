@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/fonts';
 .navbar {
     background-color: $darkBlue;
     padding: 12px 0px;
@@ -86,6 +87,27 @@
         right: 9px;
         transition: 1s;
     }
+    &-side-menu {
+        ul {
+           list-style-type: none;
+           font-size: 26px;
+           font-family: $opensans-semibold;
+           color: $white;
+           cursor: pointer;
+           margin-top: 30px;
+           margin-left: 50px;
+          li {
+              margin-top: 10px;
+          }
+          li:nth-child(5) {
+              margin-top: 100px;
+          }
+           div {
+               color:#EFEFEF ;
+               font-size: 20px;
+           }
+        }
+    }
     input {
         background: none;
         border: none;
@@ -105,3 +127,19 @@
       }
     
 }
+
+@media  only screen and (max-width: 1024px) {
+    .p-dialog {
+        top: 3px !important;
+        left: -11px;
+        width: 35vw ;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .p-dialog {
+        top: 23px;
+        left: -11px;
+        width: 100vw !important;
+    }
+  }

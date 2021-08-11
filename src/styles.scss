@@ -146,7 +146,37 @@ body {
     border-left: none;
 }
 
+/*p-dialog*/
+.p-dialog {
+    display: flex;
+    flex-direction: column;
+    max-height: 90%;
+    position: relative;
+    transform: scale(1);
+    background:$darkBlue;
+    top: 37px;
+    left: -11px;
+    &-header {
+        display: none !important;
+    }
+    &-content {
+        background: $darkBlue !important;
+        height: 100%;;
+        padding: 10px 60px !important;
+    }
+}
+
+
 /*mobile veiw carousel*/
+@media  only screen and (max-width: 1024px) {
+    .p-dialog {
+        top: 39px !important ;
+        left: -11px;
+        width: 35vw ;
+        height: 95vh !important;
+        max-height: 100% !important;
+    }
+}
 
 @media only screen and (max-width: 600px) { 
     .carousel {
@@ -159,6 +189,11 @@ body {
         &-dots {
             bottom: 5px !important;
         }
+    }
+    .p-dialog {
+        top: 23px;
+        left: -11px;
+        width: 100vw !important;
     }
 }
 
