@@ -96,6 +96,9 @@
            cursor: pointer;
            margin-top: 30px;
            margin-left: 50px;
+           .active {
+               color: $lightBlue;
+           }
           li {
               margin-top: 10px;
           }
@@ -128,18 +131,5 @@
     
 }
 
-@media  only screen and (max-width: 1024px) {
-    .p-dialog {
-        top: 3px !important;
-        left: -11px;
-        width: 35vw ;
-    }
-}
 
-@media only screen and (max-width: 600px) {
-    .p-dialog {
-        top: 23px;
-        left: -11px;
-        width: 100vw !important;
-    }
-  }
+

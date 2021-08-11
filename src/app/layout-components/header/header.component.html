@@ -108,8 +108,8 @@
 
 </div>
 
-<p-dialog header="Godfather I" [(visible)]="sideMenuShow" [position]="position" [style]="{width: '35vw', height:'90vh'}"
-    [draggable]="false" [blockScroll]="true">
+<p-dialog [dismissableMask]="true" [(visible)]="sideMenuShow" [position]="position"
+    [style]="{width: '35vw', height:'90vh'}" [draggable]="false" [blockScroll]="true">
     <div class="d-flex navbar-side-menu">
         <div>
             <img src="../../../assets/imgs/instagram-white.svg" height="23" class="d-block "
@@ -119,12 +119,12 @@
         </div>
         <div>
             <ul>
-                <li>Home</li>
+                <li [routerLink]="['/home']" routerLinkActive="active">Home</li>
                 <li>About us
                     <div>who are us</div>
                     <div>Why us?</div>
                 </li>
-                <li>News
+                <li [routerLink]="['/news']" routerLinkActive="active">News
                     <div>News</div>
                     <div>Events</div>
                 </li>

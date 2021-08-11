@@ -10,7 +10,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [NewsDetailsComponent, NewsListComponent],
   imports: [
@@ -20,7 +19,7 @@ import { FormsModule } from '@angular/forms';
     MenuModule,
     DropdownModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class NewsModule { }

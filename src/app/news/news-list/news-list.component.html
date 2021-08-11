@@ -10,12 +10,13 @@
         <div class="news-list-fitlers-container d-flex justify-content-between mb-4">
             <div>
                 <label for="" class="d-block mb-1">From</label>
-                <p-calendar [(ngModel)]="from" [showIcon]="true" inputId="icon" dateFormat="yy.mm.dd"></p-calendar>
+                <p-calendar [(ngModel)]="from" [showIcon]="true" inputId="icon" dateFormat="yy.mm.dd"
+                    placeholder="Select a Date"></p-calendar>
             </div>
             <div>
                 <label for="" class="d-block mb-1">to</label>
                 <p-calendar [(ngModel)]="to" [showIcon]="true" inputId="icon" dateFormat="yy.mm.dd"
-                    (onSelect)="onDateFilter()"></p-calendar>
+                    (onSelect)="onDateFilter()" placeholder="Select a Date"></p-calendar>
             </div>
             <div>
                 <label for="" class="d-block mb-1">Category</label>

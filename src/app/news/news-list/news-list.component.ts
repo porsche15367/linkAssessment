@@ -13,6 +13,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./news-list.component.scss']
 })
 export class NewsListComponent implements OnInit {
+  allNews: Article[]
   newss: Article[]
   categories: SourceCategory[]
   items: MenuItem[];
@@ -30,6 +31,7 @@ export class NewsListComponent implements OnInit {
     this.NewsService.getAllNews().subscribe(
       res => {
         this.newss = JSON.parse(JSON.stringify(res)).articles
+        this.allNews = this.newss
       }
     )
     this.SourceCategoryService.getSourceCategories().subscribe(
@@ -72,19 +74,26 @@ export class NewsListComponent implements OnInit {
   }
 
   onSearchText() {
-    this.newss = this.newss.filter(news => {
-      return news.title.toLowerCase().match(this.searchText)
+    if (this.searchText.length > 0) {
+      this.newss = this.newss.filter(news => {
+        return news.title.toLowerCase().match(this.searchText)
+      }
+      )
+
+    } else {
+      return this.newss = this.allNews
     }
-    )
+
   }
+
   onFilterByCategory() {
+    this.newss = this.allNews
     this.newss = this.newss.filter(news => news.sourceID == this.selectedSourceCategory)
   }
 
   onDateFilter() {
-
-    this.newss = this.newss.filter((news) =>
-      news.publishedAt >= this.from && news.publishedAt <= this.to
+    this.newss = this.allNews
+    this.newss = this.newss.filter(news => new Date(news.publishedAt).getTime() >= new Date(this.from).getTime() && new Date(news.publishedAt).getTime() <= new Date(this.to).getTime()
     );
   }
 }
