@@ -92,8 +92,9 @@ export class NewsListComponent implements OnInit {
   }
 
   onDateFilter() {
+    console.log(new Date(this.from).getDate())
     this.newss = this.allNews
-    this.newss = this.newss.filter(news => new Date(news.publishedAt).getTime() >= new Date(this.from).getTime() && new Date(news.publishedAt).getTime() <= new Date(this.to).getTime()
+    this.newss = this.newss.filter(news => new Date(news.publishedAt).getDate() >= new Date(this.from).getDate() && new Date(news.publishedAt).getDate() <= new Date(this.to).getDate()
     );
   }
 }
