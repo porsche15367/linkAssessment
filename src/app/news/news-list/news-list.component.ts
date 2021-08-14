@@ -39,6 +39,7 @@ export class NewsListComponent implements OnInit {
         this.categories = JSON.parse(JSON.stringify(res)).sourceCategory
       }
     )
+    this.likedNews = this.LikedNewsService.likedNews
 
     this.items = [
       { label: 'Home', routerLink: '/' },

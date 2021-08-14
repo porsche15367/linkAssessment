@@ -23,6 +23,7 @@ export class LatestNewsComponent implements OnInit {
   ngOnInit(): void {
     this.news$ = this.NewsService.getAllNews()
     this.sourceCategories$ = this.SourceCategoryService.getSourceCategories()
+    this.likedNews = this.LikedNewsService.likedNews
     this.items = [
       { label: '', icon: 'pi pi-fw pi-facebook' },
       { label: '', icon: 'pi pi-fw pi-twitter' },

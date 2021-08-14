@@ -12,6 +12,7 @@ export class LikedNewsService {
     } else {
       this.likedNews.splice(this.likedNews.indexOf(id), 1);
     }
+    console.log(this.likedNews)
     return this.likedNews
   }
 }

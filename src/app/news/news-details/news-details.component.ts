@@ -32,6 +32,7 @@ export class NewsDetailsComponent implements OnInit {
       }
     );
     this.sourceCategories$ = this.SourceCategoryService.getSourceCategories()
+    this.likedNews = this.LikedNewsService.likedNews
     this.items = [
       { label: 'Home', routerLink: '/' },
       { label: 'News', routerLink: '/news/news-list' },
