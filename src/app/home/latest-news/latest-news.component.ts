@@ -38,7 +38,6 @@ export class LatestNewsComponent implements OnInit {
 
   shareSocialIcon(id) {
     this.shareSocial = id
-    console.log(this.shareSocial)
   }
   resetShareSocialIcon() {
     this.shareSocial = 0
