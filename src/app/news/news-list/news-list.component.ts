@@ -68,7 +68,6 @@ export class NewsListComponent implements OnInit {
 
   shareSocialIcon(id) {
     this.shareSocial = id
-    console.log(this.shareSocial)
   }
   resetShareSocialIcon() {
     this.shareSocial = 0
@@ -93,7 +92,6 @@ export class NewsListComponent implements OnInit {
   }
 
   onDateFilter() {
-    console.log(new Date(this.from).valueOf())
     this.newss = this.allNews
     this.newss = this.newss.filter(news => new Date(news.publishedAt).valueOf() >= new Date(this.from).valueOf() && new Date(news.publishedAt).valueOf() <= new Date(this.to).valueOf()
     );
